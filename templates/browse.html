@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentEase - Browse Properties</title>
+</head>
+<body>
+    <h1>Browse Available Properties</h1>
+    <h2>Welcome, {{ user.full_name }}!</h2>
+    
+    <h3>Available Properties:</h3>
+    {% if properties %}
+        {% for property in properties %}
+            <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+                <h4>{{ property.property_name }}</h4>
+                <p><strong>Location:</strong> {{ property.location }}</p>
+                <p><strong>Description:</strong> {{ property.description }}</p>
+                <p><strong>Posted:</strong> {{ property.date_posted }}</p>
+                <p><a href="/property/{{ property.property_id }}">View Details</a></p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No properties available at the moment.</p>
+    {% endif %}
+    
+    <h3>Your Actions:</h3>
+    <ul>
+        <li><a href="/my_bookings">My Bookings</a></li>
+        <li><a href="/my_reviews">My Reviews</a></li>
+        <li><a href="/profile">My Profile</a></li>
+    </ul>
+    
+    <p><a href="/logout">Logout</a></p>
+</body>
+</html>
+

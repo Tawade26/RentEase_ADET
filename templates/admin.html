@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentEase - Admin Panel</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <h2>Welcome, {{ user.full_name }}!</h2>
+    
+    <h3>System Overview:</h3>
+    <ul>
+        <li>Total Users: {{ stats.total_users }}</li>
+        <li>Total Properties: {{ stats.total_properties }}</li>
+        <li>Total Bookings: {{ stats.total_bookings }}</li>
+        <li>Total Payments: {{ stats.total_payments }}</li>
+    </ul>
+    
+    <h3>Admin Actions:</h3>
+    <ul>
+        <li><a href="/admin/users">Manage Users</a></li>
+        <li><a href="/admin/properties">Manage Properties</a></li>
+        <li><a href="/admin/bookings">View All Bookings</a></li>
+        <li><a href="/admin/payments">View All Payments</a></li>
+        <li><a href="/admin/reviews">Moderate Reviews</a></li>
+    </ul>
+    
+    <p><a href="/logout">Logout</a></p>
+</body>
+</html>
+
